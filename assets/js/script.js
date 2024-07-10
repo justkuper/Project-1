@@ -58,7 +58,8 @@ async function searchRecipes(query) {
     } else {
       throw new Error("No results found");
     }
-  } catch (error) {
+  } 
+  catch (error) {
     console.error("Error fetching data:", error);
     return null;
   }
