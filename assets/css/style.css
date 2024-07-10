@@ -1,0 +1,12 @@
+:root {
+    --Primary: #36B5B0;
+    --Secondary: #d5f5ed; 
+    --Tertiary: #FCF5B0; 
+    --Accent: #e65c5c;
+    --Background: #f8f9fa;
+}
+
+h1 {
+  color: var(--Primary);
+  background: var(--Tertiary);
+}
