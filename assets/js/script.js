@@ -55,7 +55,8 @@ async function searchRecipes(query) {
     // Check if the response contains any results
     if (data.results) {
       return data.results;
-    } else {
+    } 
+    else {
       throw new Error("No results found");
     }
   } 
