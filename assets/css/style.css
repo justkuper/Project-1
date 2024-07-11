@@ -144,15 +144,26 @@ body {
   box-shadow: none;
 }
 
+h3 {
+  color: var(--Accent);
+  text-align: center;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  /* text-shadow: 2px 2px 2px #8a8a8a; */
+  background-color: #fefefe;
+  width: 96%;
+  margin: 10px;
+  border: 1px solid #8a8a8a;
+  box-shadow: 3px 3px 3px 3px #8a8a8a;
+}
+
 #container-recipe-results {
   background-color: var(--Background);
   width: 60%;
   margin: 20px;
   border: 1px solid #8a8a8a;
   box-shadow: 5px 5px 5px 5px #8a8a8a;
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 300;
-  font-style: normal;
 }
 
 .recipe-card {
