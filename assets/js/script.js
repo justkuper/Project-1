@@ -71,9 +71,18 @@ async function searchRecipes(query) {
 // Example usage
 searchRecipes("pasta").then(results => {
   if (results) {
-    console.log("search results", results);
+    document.write("search results", results);
   } 
   else {
-    console.log("No results found or an error occurred.");
+    document.write("No results found or an error occurred.");
   }
+});
+
+
+// addEventListener version
+const input = document.querySelector('input[type="search"]');
+const resultsContainer = document.getElementById('results');
+
+input.addEventListener("search", () => {
+  resultsContainer.textContent = `The term searched for was ${input.value}`;
 });
