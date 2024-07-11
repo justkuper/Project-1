@@ -19,10 +19,12 @@ async function searchYouTube(query) {
     // Check if the response contains any items
     if (data.items) {
       return data.items;
-    } else {
+    }
+     else {
       throw new Error("No results found");
     }
-  } catch (error) {
+  } 
+  catch (error) {
     console.error("Error fetching data:", error);
     return null;
   }
@@ -31,7 +33,8 @@ async function searchYouTube(query) {
 searchYouTube("panda").then(results => {
   if (results) {
     console.log("Search results:", results);
-  } else {
+  } 
+  else {
     console.log("No results found or an error occurred.");
   }
 });
@@ -69,7 +72,8 @@ async function searchRecipes(query) {
 searchRecipes("pasta").then(results => {
   if (results) {
     console.log("search results", results);
-  } else {
+  } 
+  else {
     console.log("No results found or an error occurred.");
   }
 });
