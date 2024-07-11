@@ -3,13 +3,68 @@
     --Secondary: #d5f5ed; 
     --Tertiary: #FCF5B0; 
     --Accent: #e65c5c;
-    --Background: #f8f9fa;
+    --Background: #ebebeb;
+}
+
+.ubuntu-light {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.ubuntu-regular {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.ubuntu-bold {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.ubuntu-light-italic {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+* {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+header {
+  color: var(--Accent);
+  background-image: radial-gradient(white, var(--Tertiary));
+  text-align: center;
+  border: 7px outset var(--Tertiary);
+  border-radius: 5px;
+  margin: 20px;
+  box-shadow: 5px 5px 5px #8a8a8a;
+
 }
 
 h1 {
-  color: var(--Primary);
-  background-image: var(--Tertiary);
-  text-align: center;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h2 {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: x-large;
+  color: #626262;
+  margin-bottom: 15px;
+
+}
+
+body {
+  background-color: var(--Background);
 }
 
 
