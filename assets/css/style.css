@@ -1,10 +1,12 @@
 :root {
     --Primary: #36B5B0;
     --Secondary: #d5f5ed; 
-    --Tertiary: #FCF5B0; 
+    --Tertiary: #fff06a;
     --Accent: #e65c5c;
     --Background: #ebebeb;
     --Search: #88d9dc;
+    --CardBackground: #fefefe;
+    --BordersShadows: #8a8a8a;
 }
 
 .ubuntu-light {
@@ -44,7 +46,7 @@ header {
   border: 7px outset var(--Tertiary);
   border-radius: 5px;
   margin: 20px;
-  box-shadow: 5px 5px 5px #8a8a8a;
+  box-shadow: 5px 5px 5px var(--BordersShadows);
 
 }
 
@@ -71,15 +73,19 @@ body {
 .searchSec {
   display: flex;
   flex-direction: row;
-  background: url("../Images/backSearch.png") center no-repeat;
-  background-color: var(--Search);
+  background: url("../Images/backSearch.png") center center no-repeat;
+  /* background-color: var(--Search); */
   align-items: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
+  justify-content: center;
+  width: 100%;
+  height: 430px;
+  background-size: 650px;
+  /* -webkit-align-items: center;
+  -ms-flex-align: center; */
     
 }
 
-.hero-search-filter-content {
+/* .hero-search-filter-content {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -95,27 +101,32 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
 
-}
+} */
 
 .hero-search-filter-form {
-  display: -webkit-flex;
-  display: -ms-flexbox;
+  /* display: -webkit-flex;
+  display: -ms-flexbox; */
   display: flex;
-  width: 90%;
-  background: #fefefe;
+  /* width: 90%; */
+  align-items: center;
+  background: var(--CardBackground);
   padding: 0.25rem;
   border-radius: 5px;
-  -webkit-align-items: center;
+  /* -webkit-align-items: center;
       -ms-flex-align: center;
-          align-items: center;
-    margin-bottom: 12%;
-    width: 43%;
+          align-items: center; */
+    /* margin-bottom: 12%;
+    width: 43%; */
+    width: 220%;
+    position: relative;
+    right: 60%;
+    margin-bottom: 60%;
 }
 
-.hero-search-filter-form .divider {
+/* .hero-search-filter-form .divider {
   background: #cacaca;
   width: 1px;
-}
+} */
 
 /* .hero-search-filter-form label {
   margin-right: 0.75rem;
@@ -154,8 +165,8 @@ main {
   background-color: var(--Background);
   width: 60%;
   margin: 20px;
-  border: 1px solid #8a8a8a;
-  box-shadow: 5px 5px 5px 5px #8a8a8a;
+  border: 1px solid var(--BordersShadows);
+  box-shadow: 5px 5px 5px 5px var(--BordersShadows);
 }
 
 #container-recipe-results h3 {
@@ -164,15 +175,15 @@ main {
   font-family: "Ubuntu", sans-serif;
   font-weight: 700;
   font-style: normal;
-  background-color: #fefefe;
+  background-color: var(--CardBackground);
   width: 96%;
   margin: 10px;
-  border: 1px solid #8a8a8a;
-  box-shadow: 3px 3px 3px 3px #8a8a8a;
+  border: 1px solid var(--BordersShadows);
+  box-shadow: 3px 3px 3px 3px var(--BordersShadows);
 }
 
 .recipe-card {
-  background-color: #fefefe;
+  background-color: var(--CardBackground);
   padding: 1rem;
   display: flex;
   width: 97%;
@@ -212,10 +223,14 @@ main {
   align-items: center;
   border: 2x solid black;
   margin-top: 10%;
-  background-color: var(--Search);
+  background-color: var(--Accent);
   height: fit-content;
   padding: 5px;
-  border: 2px outset var(--Search);
+  border: 2px outset var(--Accent);
+}
+
+#get-url {
+  color: var(--CardBackground);
 }
 
 .recipe-card-button:hover {
@@ -226,8 +241,8 @@ main {
   background-color: var(--Background);
   width: 33%;
   margin: 20px;
-  border: 1px solid #8a8a8a;
-  box-shadow: 5px 5px 5px 5px #8a8a8a;
+  border: 1px solid var(--BordersShadows);
+  box-shadow: 5px 5px 5px 5px var(--BordersShadows);
 }
 
 #container-video-results h3 {
@@ -236,15 +251,15 @@ main {
   font-family: "Ubuntu", sans-serif;
   font-weight: 700;
   font-style: normal;
-  background-color: #fefefe;
+  background-color: var(--CardBackground);
   width: 93%;
   margin: 10px;
-  border: 1px solid #8a8a8a;
-  box-shadow: 3px 3px 3px 3px #8a8a8a;
+  border: 1px solid var(--BordersShadows);
+  box-shadow: 3px 3px 3px 3px var(--BordersShadows);
 }
 
 .video-card {
-  background-color: #fefefe;
+  background-color: var(--CardBackground);
   padding: 1rem;
   width: 94%;
   margin: 10px;
@@ -262,7 +277,7 @@ main {
 }
 
 .video-card-desc {
-  color: #8a8a8a;
+  color: var(--BordersShadows);
   display: block;
   text-align: center;
   font-size: smaller;
