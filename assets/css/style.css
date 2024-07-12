@@ -4,6 +4,7 @@
     --Tertiary: #FCF5B0; 
     --Accent: #e65c5c;
     --Background: #ebebeb;
+    --Search: #88d9dc;
 }
 
 .ubuntu-light {
@@ -71,7 +72,7 @@ body {
   display: flex;
   flex-direction: row;
   background: url("../Images/backSearch.png") center no-repeat;
-  background-color: #88d9dc;
+  background-color: var(--Search);
   align-items: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
@@ -144,19 +145,10 @@ body {
   box-shadow: none;
 }
 
-h3 {
-  color: var(--Accent);
-  text-align: center;
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-  /* text-shadow: 2px 2px 2px #8a8a8a; */
-  background-color: #fefefe;
-  width: 96%;
-  margin: 10px;
-  border: 1px solid #8a8a8a;
-  box-shadow: 3px 3px 3px 3px #8a8a8a;
+main {
+  display: flex;
 }
+
 
 #container-recipe-results {
   background-color: var(--Background);
@@ -166,11 +158,24 @@ h3 {
   box-shadow: 5px 5px 5px 5px #8a8a8a;
 }
 
+#container-recipe-results h3 {
+  color: var(--Accent);
+  text-align: center;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  background-color: #fefefe;
+  width: 96%;
+  margin: 10px;
+  border: 1px solid #8a8a8a;
+  box-shadow: 3px 3px 3px 3px #8a8a8a;
+}
+
 .recipe-card {
   background-color: #fefefe;
   padding: 1rem;
   display: flex;
-  width: 96%;
+  width: 97%;
   margin: 10px;
 }
 
@@ -194,7 +199,6 @@ h3 {
 .recipe-card-desc {
   color: #8a8a8a;
   display: block;
-  
 }
 
 .recipe-card-prop {
@@ -208,13 +212,59 @@ h3 {
   align-items: center;
   border: 2x solid black;
   margin-top: 10%;
-  background-color: var(--Accent);
+  background-color: var(--Search);
   height: fit-content;
   padding: 5px;
-  border: 2px outset var(--Accent);
+  border: 2px outset var(--Search);
 }
 
 .recipe-card-button:hover {
   border: 2px inset var(--Accent);
+}
+
+#container-video-results {
+  background-color: var(--Background);
+  width: 33%;
+  margin: 20px;
+  border: 1px solid #8a8a8a;
+  box-shadow: 5px 5px 5px 5px #8a8a8a;
+}
+
+#container-video-results h3 {
+  color: var(--Accent);
+  text-align: center;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  background-color: #fefefe;
+  width: 93%;
+  margin: 10px;
+  border: 1px solid #8a8a8a;
+  box-shadow: 3px 3px 3px 3px #8a8a8a;
+}
+
+.video-card {
+  background-color: #fefefe;
+  padding: 1rem;
+  width: 94%;
+  margin: 10px;
+}
+
+.video-card-thumbnail {
+  padding: 0 15%;
+}
+
+.video-card-title {
+  line-height: 1.45rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.video-card-desc {
+  color: #8a8a8a;
+  display: block;
+  text-align: center;
+  font-size: smaller;
 }
 
