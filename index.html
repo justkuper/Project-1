@@ -8,8 +8,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/css/foundation.min.css"
         crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,700;1,300&display=swap"
+        rel="stylesheet">
     <title>What's for Dinner?</title>
-
 </head>
 
 <body>
@@ -18,28 +21,125 @@
         <h2>Recipe and cooking video search</h2>
     </header>
     <div id="search-bar" class="searchSec">
-            <div class="hero-search-filter-content">
-                <form class="hero-search-filter-form" action="">
-                    <!-- <label for="findtext">Search</label> -->
-                    <input id="findtext" class="hero-search-filter-form-find" type="text" />
-                    <div class="divider">&nbsp;</div>
-                    <button id="button"><i class="fa fa-search">Search</i></button>
-                </form>
-
-            </div>
+        <div class="hero-search-filter-content">
+            <form class="hero-search-filter-form" action="">
+                <!-- <label for="findtext">Search</label> -->
+                <input id="findtext" class="hero-search-filter-form-find" type="text" />
+                <div class="divider">&nbsp;</div>
+                <button id="button"><i class="fa fa-search">Search</i></button>
+            </form>
+        </div>
         </section>
-
-
     </div>
-    <div id="container-recipe-results">
-        <section id="recipe-results">
+
+    <main>
+        <div id="container-recipe-results">
+            <h3>Recipe Search Results</h3>
+            <section id="recipe-results">
+                <div class="recipe-card">
+                    <div class="recipe-card-thumbnail">
+                        <a href="#"><img src="https://placehold.it/240x180" /></a>
+                    </div>
+                    <div class="recipe-card-info">
+                        <h5 class="recipe-card-title">Recipe Name</h5>
+                        <span class="recipe-card-desc">Recipe Description</span>
+                        <span class="recipe-card-prop">Property 1: </span>
+                    </div>
+                    <div class="recipe-card-button">
+                        <button type='submit' id="get-url">View Recipe</button>
+                    </div>
+                </div>
+                <div class="recipe-card">
+                    <div class="recipe-card-thumbnail">
+                        <a href="#"><img src="https://placehold.it/240x180" /></a>
+                    </div>
+                    <div class="recipe-card-info">
+                        <h5 class="recipe-card-title">Recipe Name</h5>
+                        <span class="recipe-card-desc">Recipe Description</span>
+                        <span class="recipe-card-prop">Property 1: </span>
+                    </div>
+                    <div class="recipe-card-button">
+                        <button type='submit' id="get-url">View Recipe</button>
+                    </div>
+                </div>
+                <div class="recipe-card">
+                    <div class="recipe-card-thumbnail">
+                        <a href="#"><img src="https://placehold.it/240x180" /></a>
+                    </div>
+                    <div class="recipe-card-info">
+                        <h5 class="recipe-card-title">Recipe Name</h5>
+                        <span class="recipe-card-desc">Recipe Description</span>
+                        <span class="recipe-card-prop">Property 1: </span>
+                    </div>
+                    <div class="recipe-card-button">
+                        <button type='submit' id="get-url">View Recipe</button>
+                    </div>
+                </div>
+                <div class="recipe-card">
+                    <div class="recipe-card-thumbnail">
+                        <a href="#"><img src="https://placehold.it/240x180" /></a>
+                    </div>
+                    <div class="recipe-card-info">
+                        <h5 class="recipe-card-title">Recipe Name</h5>
+                        <span class="recipe-card-desc">Recipe Description</span>
+                        <span class="recipe-card-prop">Property 1: </span>
+                    </div>
+                    <div class="recipe-card-button">
+                        <button type='submit' id="get-url">View Recipe</button>
+                    </div>
+                </div>
+                <div class="recipe-card">
+                    <div class="recipe-card-thumbnail">
+                        <a href="#"><img src="https://placehold.it/240x180" /></a>
+                    </div>
+                    <div class="recipe-card-info">
+                        <h5 class="recipe-card-title">Recipe Name</h5>
+                        <span class="recipe-card-desc">Recipe Description</span>
+                        <span class="recipe-card-prop">Property 1: </span>
+                    </div>
+                    <div class="recipe-card-button">
+                        <button type='submit' id="get-url">View Recipe</button>
+                    </div>
+                </div>
+               
+            </section>
             <button id="get-url">View Recipe</button>
-        </section>
-    </div>
-    <div id="container-video-results">
-        <section id="video-results">
-        </section>
-    </div>
+        </div>
+        <div id="container-video-results">
+            <h3>Cooking Videos</h3>
+            <section id="video-results">
+                <div class="video-card">
+                    <div class="video-card-thumbnail">
+                        <a href="#"><img src="https://placehold.it/240x180" /></a>
+                    </div>
+                    <h6 class="video-card-title"><a href="#">Product Name</a></h6>
+                    <p class="video-card-desc">Product Description</p>
+                </div>
+                <div class="video-card">
+                    <div class="video-card-thumbnail">
+                        <a href="#"><img src="https://placehold.it/240x180" /></a>
+                    </div>
+                    <h6 class="video-card-title"><a href="#">Product Name</a></h6>
+                    <p class="video-card-desc">Product Description</p>
+                </div>
+                <div class="video-card">
+                    <div class="video-card-thumbnail">
+                        <a href="#"><img src="https://placehold.it/240x180" /></a>
+                    </div>
+                    <h6 class="video-card-title"><a href="#">Product Name</a></h6>
+                    <p class="video-card-desc">Product Description</p>
+                </div>
+                <div class="video-card">
+                    <div class="video-card-thumbnail">
+                        <a href="#"><img src="https://placehold.it/240x180" /></a>
+                    </div>
+                    <h6 class="video-card-title"><a href="#">Product Name</a></h6>
+                    <p class="video-card-desc">Product Description</p>
+                </div>
+            </section>
+        </div>
+    </main>
+    
     <footer id="footer">
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/js/foundation.min.js"

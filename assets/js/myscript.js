@@ -15,12 +15,12 @@ function getParams() {
     searchApi(query, format);
   }
 
-  function searchrecipeApi (query) {
-return `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${query}&addRecipeInstructions=${query}&number=5`
-  }
-  function recipeIdInfo (query) {
-    return `https://api.spoonacular.com/recipes/{id}/informationapiKey=${apiKey}&query=${query}&addRecipeInstructions=${query}&number=5`
-      }
+function searchrecipeApi(query) {
+  return `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${query}&addRecipeInstructions=${query}&number=5`
+}
+function recipeIdInfo(id) {
+  return `https://api.spoonacular.com/recipes/${id}/information?apiKey=${apiKey}`
+}
      
 
   searchBtn.addEventListener('click', function (event) {
@@ -34,8 +34,33 @@ return `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query
             return response.json();
         })
         .then(function (data) {
-            console.log(data);
+           console.log(data)
         // getRecipe(data)
+        for (let i =0; i < data.results.length; i++) {
+          const resultTitle = document.createElement("h3");
+            const resultDescription = document.createElement("p");
+            const resultImg = document.createElement("img");
+            const resultButton = document.createElement("button");
+            resultButton.textContent = "view recipe";
+            const itemID = data.results[i].id;
+            resultButton.setAttribute("id", itemID);
+            resultButton.addEventListener('click', function() {
+                const recipeInfoURL = recipeIdInfo(itemID);
+                fetch(recipeInfoURL)
+                    .then((response) =>  {
+                        return response.json()
+                    })
+                    .then((response) => {
+                      const recipeURL = response.sourceUrl;
+                      window.open(recipeURL, "_blank");
+                      console.log({ response });
+                    });
+            });
+            
+          
+            resultTitle.textContent = "" + data.results[i].title;
+            resultImg.setAttribute("src", data.results[i].image);
+
 
         });
     })
@@ -67,42 +92,19 @@ return `${baseURL2}?part=snippet&maxResults=5&q=${encodeURIComponent(query)}&key
 
         });
     })
-    // function getRecipe (recipesData) {
-    //     console.log(recipesData)
-    //     getUrl.addEventListener('click', function (event) {
-    //         const recipeId = recipesData.results.id
-    //         const q = recipeId
-    //         function recipeIdInfo (query) {
-    //             return `https://api.spoonacular.com/recipes/id=${recipeId}/informationapiKey=${apiKey}`
-    //               }
-    //               console.log(recipesData)
-    //         const recipeIdUrl = recipeIdInfo(q);
+
+            containerRecipeResults.append(resultTitle, resultDescription, resultImg, resultButton);
+
+
            
-    //      fetch(recipeIdInfo)
-    //     .then(function (response) {
-    //     return response.json();
-    //     })
-    //     .then(function (data) {
-    //     console.log(data);
-    //     // getRecipe(data)
 
-    // });
-    // //     })
+        }
+      })
+  });
+    
 
-       
 
-    // }
-    //         // const resultTitle = document.createElement("h3");
-            // const resultDescription = document.createElement("p");
-            // const resultImg = document.createElement("p");
-          
-            // resultTitle.textContent = data.results.title;
-            // resultDescription.textContent = data.results.image;
-            // resultImg.textContent = data;
-            
-            
-
-            // containerRecipeResults.append(resultTitle, resultDescription, resultImg);
+    
 
 
             
