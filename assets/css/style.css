@@ -1,10 +1,12 @@
 :root {
-    --Primary: #36B5B0;
-    --Secondary: #d5f5ed; 
-    --Tertiary: #FCF5B0; 
-    --Accent: #e65c5c;
-    --Background: #ebebeb;
-    --Search: #88d9dc;
+  --Primary: #36B5B0;
+  --Secondary: #d5f5ed;
+  --Tertiary: #fff06a;
+  --Accent: #e65c5c;
+  --Background: #ebebeb;
+  --Search: #88d9dc;
+  --CardBackground: #fefefe;
+  --BordersShadows: #8a8a8a;
 }
 
 .ubuntu-light {
@@ -44,7 +46,7 @@ header {
   border: 7px outset var(--Tertiary);
   border-radius: 5px;
   margin: 20px;
-  box-shadow: 5px 5px 5px #8a8a8a;
+  box-shadow: 5px 5px 5px var(--BordersShadows);
 
 }
 
@@ -71,68 +73,30 @@ body {
 .searchSec {
   display: flex;
   flex-direction: row;
-  background: url("../Images/backSearch.png") center no-repeat;
-  background-color: var(--Search);
+  background: url("../Images/backSearch.png") center center no-repeat;
   align-items: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-    
-}
-
-.hero-search-filter-content {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  justify-content: center;
   width: 100%;
-  height: 300px;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-
+  height: 430px;
+  background-size: 650px;
 }
+
 
 .hero-search-filter-form {
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  width: 90%;
-  background: #fefefe;
+  align-items: center;
+  background: var(--CardBackground);
   padding: 0.25rem;
   border-radius: 5px;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-    margin-bottom: 12%;
-    width: 43%;
+  width: 220%;
+  position: relative;
+  right: 60%;
+  margin-bottom: 60%;
 }
-
-.hero-search-filter-form .divider {
-  background: #cacaca;
-  width: 1px;
-}
-
-/* .hero-search-filter-form label {
-  margin-right: 0.75rem;
-  margin-left: 0.75rem;
-  color: #8a8a8a;
-  font-weight: bold;
-} */
 
 .hero-search-filter-form input,
 .hero-search-filter-form .button {
   margin-bottom: 0;
-}
-
-@media screen and (max-width: 39.9375em) {
-  .hero-search-filter-form {
-    width: 95%;
-  }
 }
 
 .hero-search-filter-form-find {
@@ -154,13 +118,12 @@ main {
   display: flex;
 }
 
-
 #container-recipe-results {
   background-color: var(--Background);
   width: 60%;
   margin: 20px;
-  border: 1px solid #8a8a8a;
-  box-shadow: 5px 5px 5px 5px #8a8a8a;
+  border: 1px solid var(--BordersShadows);
+  box-shadow: 5px 5px 5px 5px var(--BordersShadows);
 }
 
 #container-recipe-results h3 {
@@ -169,15 +132,15 @@ main {
   font-family: "Ubuntu", sans-serif;
   font-weight: 700;
   font-style: normal;
-  background-color: #fefefe;
+  background-color: var(--CardBackground);
   width: 96%;
   margin: 10px;
-  border: 1px solid #8a8a8a;
-  box-shadow: 3px 3px 3px 3px #8a8a8a;
+  border: 1px solid var(--BordersShadows);
+  box-shadow: 3px 3px 3px 3px var(--BordersShadows);
 }
 
 .recipe-card {
-  background-color: #fefefe;
+  background-color: var(--CardBackground);
   padding: 1rem;
   display: flex;
   width: 97%;
@@ -217,10 +180,15 @@ main {
   align-items: center;
   border: 2x solid black;
   margin-top: 10%;
-  background-color: var(--Search);
+  background-color: var(--Accent);
   height: fit-content;
   padding: 5px;
-  border: 2px outset var(--Search);
+  border: 2px outset var(--Accent);
+}
+
+#get-url {
+  color: var(--CardBackground);
+  /* font-family: sans-serif; */
 }
 
 .recipe-card-button:hover {
@@ -231,8 +199,8 @@ main {
   background-color: var(--Background);
   width: 33%;
   margin: 20px;
-  border: 1px solid #8a8a8a;
-  box-shadow: 5px 5px 5px 5px #8a8a8a;
+  border: 1px solid var(--BordersShadows);
+  box-shadow: 5px 5px 5px 5px var(--BordersShadows);
 }
 
 #container-video-results h3 {
@@ -241,15 +209,15 @@ main {
   font-family: "Ubuntu", sans-serif;
   font-weight: 700;
   font-style: normal;
-  background-color: #fefefe;
+  background-color: var(--CardBackground);
   width: 93%;
   margin: 10px;
-  border: 1px solid #8a8a8a;
-  box-shadow: 3px 3px 3px 3px #8a8a8a;
+  border: 1px solid var(--BordersShadows);
+  box-shadow: 3px 3px 3px 3px var(--BordersShadows);
 }
 
 .video-card {
-  background-color: #fefefe;
+  background-color: var(--CardBackground);
   padding: 1rem;
   width: 94%;
   margin: 10px;
@@ -267,11 +235,127 @@ main {
 }
 
 .video-card-desc {
-  color: #8a8a8a;
+  color: var(--BordersShadows);
   display: block;
   text-align: center;
   font-size: smaller;
 }
-#recipe0ffdss h3 {
+
+
+
+@media screen and (max-width: 850px) {
+
+  #container-recipe-results {
+    width: 65%;
+  }
+
+  #container-video-results {
+    width: 25%;
+  }
+
+  .recipe-card {
+    width: 95%;
+  }
+
+  .recipe-card-title,
+  .recipe-card-desc,
+  .recipe-card-prop,
+  .recipe-card-button {
+    font-size: 10pt;
+  }
+
+  #container-video-results h3 {
+    width: 90%;
+  }
+
+  .video-card {
+    width: 90%;
+    justify-content: center;
+    padding: 10px 0;
+  }
+
+  .video-card-thumbnail img {
+    padding: 0;
+    margin: 0;
+    height: 80px;
+    align-items: center;
+  }
+
+  h6 {
+    font-size: 10pt;
+  }
+
+}
+
+
+@media screen and (max-width: 700px) {
+  .searchSec {
+    width: 100%;
+    height: 250px;
+    background-size: 100%;
+  }
+
+  .hero-search-filter-form {
+    display: flex;
+    align-items: center;
+    background: var(--CardBackground);
+
+    width: 400px;
+    position: relative;
+    left: .5%;
+    margin-bottom: 40%;
+  }
+
+  h1 {
+    font-size: xx-large;
+  }
+
+  h2 {
+    font-size: medium;
+  }
+
+  main {
+    flex-direction: column;
+  }
+
+  #container-recipe-results,
+  #container-video-results {
+    width: 93%;
+  }
+
+  #container-recipe-results h3,
+  #container-video-results h3 {
+    width: 95%;
+  }
+
+  .recipe-card {
+    width: 95%;
+  }
+
+  .recipe-card-title,
+  .recipe-card-desc,
+  .recipe-card-prop,
+  .recipe-card-button {
+    font-size: 10pt;
+  }
+
+
+
+  .video-card {
+    width: 95%;
+    justify-content: center;
+    padding: 10px 0 3px 0;
+  }
+
+  .video-card-thumbnail img {
+    padding: 0;
+    padding-left: 33%;
+    max-height: 100px;
+    align-items: center;
+  }
+
+  h6 {
+    font-size: 11pt;
+  }
 
 }
