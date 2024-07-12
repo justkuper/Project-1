@@ -61,9 +61,10 @@ function recipeIdInfo(id) {
             resultTitle.textContent = "" + data.results[i].title;
             resultImg.setAttribute("src", data.results[i].image);
 
-
-        });
-    })
+            containerRecipeResults.append(resultTitle, resultDescription, resultImg, resultButton);
+        }
+      })
+    });
 
     
 const baseURL2 = `https://www.googleapis.com/youtube/v3/search`
@@ -93,14 +94,6 @@ return `${baseURL2}?part=snippet&maxResults=5&q=${encodeURIComponent(query)}&key
         });
     })
 
-            containerRecipeResults.append(resultTitle, resultDescription, resultImg, resultButton);
-
-
-           
-
-        }
-      })
-  });
     
 
 
