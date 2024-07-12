@@ -61,7 +61,40 @@ function recipeIdInfo(id) {
             resultTitle.textContent = "" + data.results[i].title;
             resultImg.setAttribute("src", data.results[i].image);
 
+
+        });
+    })
+
+    
+const baseURL2 = `https://www.googleapis.com/youtube/v3/search`
+const apiKey2 = "AIzaSyB0XEvk44MkvgqFCfBpU2eGm60Nc7hXh6c"
+
+
+
+  function searchYoutubeApi (query) {
+return `${baseURL2}?part=snippet&maxResults=5&q=${encodeURIComponent(query)}&key=${apiKey2}`
+  }
+
+
+  searchBtn.addEventListener('click', function (event) {
+
+    event.preventDefault();
+    const q2 = formInput.value;
+    const apiUrl2 = searchYoutubeApi(q2);
+    
+
+    fetch(apiUrl2)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(data);
+
+        });
+    })
+
             containerRecipeResults.append(resultTitle, resultDescription, resultImg, resultButton);
+
 
            
 
