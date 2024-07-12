@@ -93,16 +93,21 @@ searchBtn.addEventListener('click', function (event) {
         videoCardEl.classList.add("video-card");
         containerVideoResults.append(videoCardEl);
 
-        const videoImg = document.createElement("img");
-        videoImg.classList.add("video-card-thumbnail");
-        videoImg.src = data.items[i].snippet.thumbnails.medium.url;
-        videoCardEl.append(titleEl);
+        const videoImgEl = document.createElement("img");
+        videoImgEl.classList.add("video-card-thumbnail");
+        videoImgEl.src = data.items[i].snippet.thumbnails.medium.url;
+        videoCardEl.append(videoImgEl);
 
-        const titleEl = document.createElement("a");
-        titleEl.classList.add("video-card-title");
-        titleEl.textContent = "" + data.items[i].snippet.title;
-        titleEl.href = `https://www.youtube.com/watch?v=${data.items[i].id.videoId}`;
-        videoCardEl.append(titleEl);
+        const videoTitleEl = document.createElement("a");
+        videoTitleEl.classList.add("video-card-title");
+        videoTitleEl.textContent = "" + data.items[i].snippet.title;
+        videoTitleEl.href = `https://www.youtube.com/watch?v=${data.items[i].id.videoId}`;
+        videoCardEl.append(videoTitleEl);
+
+        const videoDescEl = document.createElement("a");
+        videoDescEl.classList.add("video-card-desc");
+        videoDescEl.textContent = "" + data.items[i].snippet.description;
+        videoCardEl.append(videoDescEl);
 
       }
 

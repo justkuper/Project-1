@@ -276,7 +276,7 @@ main {
     align-items: center;
   }
 
-  h6 {
+  .video-card-title {
     font-size: 10pt;
   }
 
