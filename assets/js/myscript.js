@@ -45,7 +45,7 @@ function recipeIdInfo(id) {
             const itemID = data.results[i].id;
             resultButton.setAttribute("id", itemID);
             resultButton.addEventListener('click', function() {
-                const recipeInfoURL = recipeIdInfo(itemID);s
+                const recipeInfoURL = recipeIdInfo(itemID);
                 fetch(recipeInfoURL)
                     .then((response) =>  {
                         return response.json()
