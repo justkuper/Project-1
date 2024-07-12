@@ -108,6 +108,11 @@ body {
   border: 0;
   box-shadow: none;
 }
+button {
+  cursor: pointer;
+  border: 2px solid;
+  padding: 8px;
+}
 
 main {
   display: flex;
@@ -235,8 +240,6 @@ main {
   text-align: center;
   font-size: smaller;
 }
-
-
 
 
 
