@@ -119,6 +119,8 @@ main {
   margin: 20px;
   border: 1px solid var(--BordersShadows);
   box-shadow: 5px 5px 5px 5px var(--BordersShadows);
+  /* display: flex;
+  flex-direction: row; */
 }
 
 #container-recipe-results h3 {
@@ -216,6 +218,7 @@ main {
   padding: 1rem;
   width: 94%;
   margin: 10px;
+  text-align: center;
 }
 
 .video-card-thumbnail {
@@ -236,7 +239,24 @@ main {
   font-size: smaller;
 }
 
+footer {
+  text-align: center;
+  color: var(--Primary);
+  margin: 20px;
+  padding: 20px;
+  box-shadow: 3px 3px 3px 3px var(--BordersShadows);
+}
 
+
+@media screen and (max-width: 1100px) {
+
+  .recipe-card-title {
+    font-size: 12pt;
+  }
+
+  .recipe-card-desc {
+  font-size: 11pt;
+  }
 
 @media screen and (max-width: 850px) {
 
@@ -349,7 +369,7 @@ main {
     align-items: center;
   }
 
-  h6 {
+  .video-card-title {
     font-size: 11pt;
   }
 
