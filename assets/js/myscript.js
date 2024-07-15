@@ -3,6 +3,7 @@ const recipeResults = document.getElementById("recipe-results");
 const searchApi = `https://api.spoonacular./recipes/complexSearch/?`
 const apiKey = "5fa9f5e50dce47b9aa6ec8cd7538f0c8"
 const containerVideoResults = document.getElementById("container-video-results");
+const videoResults = document.getElementById("video-results");
 const formInput = document.getElementById("findtext");
 const getUrl = document.getElementById("get-url");
 
@@ -48,7 +49,7 @@ function buildRecipeCardInfo(result, description, prop1) {
   recipeCardProp1.setAttribute('class', 'recipe-card-prop');
 
 
-  recipeCardDesc.textContent = description.slice(0, DESCRIPTION_LENGTH) + ' ...'; // format desc so its right length
+  recipeCardDesc.innerHTML = description.slice(0, DESCRIPTION_LENGTH) + ' ...'; // format desc so its right length
   recipeCardProp1.textContent = `Ready in ${prop1} minutes.`;
   recipeCardTitle.textContent = result.title;
 
@@ -142,10 +143,8 @@ searchBtn.addEventListener('click', function (event) {
 
 
 
-
-
 const baseURL2 = `https://www.googleapis.com/youtube/v3/search`
-const apiKey2 = "AIzaSyB0XEvk44MkvgqFCfBpU2eGm60Nc7hXh6c"
+const apiKey2 = "AIzaSyD8QzBDdcKqSRbjORWHMwjopcfkRH22zY0"
 const videoCardTitle = document.getElementById("video-card-title")
 const thumbnail = document.getElementById("video-card-thumbnail")
 
@@ -154,15 +153,18 @@ searchBtn.addEventListener('click', function (event) {
 
   event.preventDefault();
 
+  videoResults.innerHTML = '';
+
   const q2 = formInput.value + " food network cooking video";
   const apiUrl2 = `${baseURL2}?part=snippet&maxResults=5&q=${q2}&key=${apiKey2}`
   const videoCardEl = document.createElement("div");
   videoCardEl.classList.add("video-card");
-  containerVideoResults.append(videoCardEl);
+  videoResults.append(videoCardEl);
   // const videoResultsTitle = document.createElement("h3");
   // videoResultsTitle.textContent = 'Cooking Videos';
   // videoResultsTitle.classList.add("video-results-container-title")
   // videoCardEl.append(videoResultsTitle);
+
 
   fetch(apiUrl2)
     .then(function (response) {
@@ -170,8 +172,14 @@ searchBtn.addEventListener('click', function (event) {
     })
     .then(function (data) {
       console.log(data);
-      for (let i = 0; i < data.items.length; i++) {
+      
+        for (let i = 0; i < data.items.length; i++) {
 
+        const favoriteButtonEl = document.createElement("button");
+        favoriteButtonEl.classList.add("favorites");
+        favoriteButtonEl.textContent = String.fromCodePoint(9734);
+        videoCardEl.append(favoriteButtonEl);
+        
         const videoImgEl = document.createElement("img");
         videoImgEl.classList.add("video-card-thumbnail");
         videoImgEl.src = data.items[i].snippet.thumbnails.medium.url;
@@ -179,14 +187,24 @@ searchBtn.addEventListener('click', function (event) {
 
         const videoTitleEl = document.createElement("a");
         videoTitleEl.classList.add("video-card-title");
-        videoTitleEl.textContent = "" + data.items[i].snippet.title;
+        videoTitleEl.innerHTML = data.items[i].snippet.title;
         videoTitleEl.href = `https://www.youtube.com/watch?v=${data.items[i].id.videoId}`;
         videoCardEl.append(videoTitleEl);
 
         const videoDescEl = document.createElement("p");
         videoDescEl.classList.add("video-card-desc");
-        videoDescEl.textContent = "" + data.items[i].snippet.description.slice(0, DESCRIPTION_LENGTH) + ' ...';
+        videoDescEl.innerHTML = "" + data.items[i].snippet.description.slice(0, DESCRIPTION_LENGTH) + ' ...';
         videoCardEl.append(videoDescEl);
+
+        // favoriteButtonEl.addEventListener('click', function (event) {
+        //   event.preventDefault();
+        //   if (favoriteButtonEl.textContent === String.fromCodePoint(9734)) {
+        //     favoriteButtonEl.textContent = String.fromCodePoint(9733);
+        //   } else {
+        //     favoriteButtonEl.textContent = String.fromCodePoint(9734)
+        //   }
+        //   localStorage.setItem('favoriteButtonEl', value);
+        // });
 
         formInput.value = '';
 
@@ -195,3 +213,4 @@ searchBtn.addEventListener('click', function (event) {
     });
 
 });
+
