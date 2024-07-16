@@ -304,6 +304,11 @@ footer {
     padding: 10px 0;
   }
 
+  .video-card-thumbnail {
+    margin-left: 7%;
+    margin-right: 15%;
+  }
+
   .video-card-thumbnail img {
     padding: 0;
     margin: 0;
@@ -375,6 +380,10 @@ footer {
     width: 95%;
     justify-content: center;
     padding: 10px 0 3px 0;
+  }
+
+  .video-card-thumbnail {
+    margin: 0;
   }
 
   .video-card-thumbnail img {

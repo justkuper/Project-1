@@ -175,10 +175,10 @@ searchBtn.addEventListener('click', function (event) {
       
         for (let i = 0; i < data.items.length; i++) {
 
-        const favoriteButtonEl = document.createElement("button");
-        favoriteButtonEl.classList.add("favorites");
-        favoriteButtonEl.textContent = String.fromCodePoint(9734);
-        videoCardEl.append(favoriteButtonEl);
+        // const favoriteButtonEl = document.createElement("button");
+        // favoriteButtonEl.classList.add("favorites");
+        // favoriteButtonEl.textContent = String.fromCodePoint(9734);
+        // videoCardEl.append(favoriteButtonEl);
         
         const videoImgEl = document.createElement("img");
         videoImgEl.classList.add("video-card-thumbnail");
