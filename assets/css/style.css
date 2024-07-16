@@ -200,7 +200,6 @@ main {
 }
 
 .favorites {
-  /* align-items: right; */
   position: relative;
   top: 20px;
   left: 5px;
@@ -240,9 +239,14 @@ main {
   padding: 0 15%;
 }
 
+.video-card-thumbnail:after {
+  content:"\a";
+  white-space: pre;
+}
+
 .video-card-title {
   line-height: 1.45rem;
-  margin-top: 1rem;
+  margin-top: 10px;
   margin-bottom: 0;
   text-align: center;
 }
